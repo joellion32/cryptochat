@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="cerrarModal()" slot="start" fill="clear">
+      <ion-icon name="arrow-back-outline"></ion-icon>    
+    </ion-button>
+    <ion-title>{{chat.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!room.messages" class="ion-text-center">
+  <br>
+  <ion-label >No hay mensajes que mostrar</ion-label>
+</ion-content>
+
+
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="message" [ngClass]="{'other-message': auth.usuario.uid == id,
+      'my-message': auth.usuario.uid != id}"  *ngFor="let message of room.messages" size="9">
+        <b>{{message.usuario}}</b><br>
+        <span>{{message.mensaje}}</span>
+        <div class="time ion-text-right">
+          <br> {{message.fecha | date}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-row>
+      <ion-col class="ion-align-items-center" size="10">
+        <textarea id="campo" class="message-input" name="mensaje" [(ngModel)]="mensaje" rows="2" placeholder="Ingresa Mensaje"></textarea>
+      </ion-col>
+
+      <ion-col size="2">
+        <ion-button class="msg-btn" (click)="enviarMensaje()" expand="block" fill="clear" color="primary" shape="round">
+          <i class="fa fa-send"></i>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

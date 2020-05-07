@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Usuario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-col class="container" size="12">
+  <ion-card>
+    <ion-card-header>
+        <img class="imagen" src="{{authService.usuario.img}}">
+      
+      <ion-card-title class="ion-text-center">{{authService.usuario.nombre}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Email: {{authService.usuario.email}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Id de usuario: {{authService.usuario.uid}}</ion-label>
+      </ion-item>
+
+     
+        <ion-button color="danger" (click)="logout()" expand="block">Cerrar Sesion</ion-button>
+     
+    </ion-card-content>
+  </ion-card>
+
+</ion-col>
+</ion-content>
+
+
+
