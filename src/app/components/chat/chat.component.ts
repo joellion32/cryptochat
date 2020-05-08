@@ -18,26 +18,23 @@ export class ChatComponent implements OnInit {
   @ViewChild(IonContent, null) content: IonContent
 
   constructor(public nav: NavParams, private modal: ModalController, public chatService: MensajeService, public auth: AuthServiceService, public storage: Storage) { }
+ 
+    // llamar parametros del modal
+    chat = this.nav.get('chat');
+    uid = this.storage.get('uid').then((val) => {
+      this.id = val;
+    });
   
-  // llamar parametros del modal
-  chat = this.nav.get('chat');
-  uid = this.storage.get('uid').then((val) => {
-    this.id = val;
-  });
 
   ngOnInit() {
-    setTimeout(() => {
-      this.content.scrollToBottom(100);
-    }, 200);  
+  this.Scroll();
 
   this.chatService.getChatRoom(this.chat.id).subscribe(resp => {
    this.room = resp;
+   this.Scroll();
    console.log(this.room);
   })
 }
-
-
-
 
   cerrarModal(){
     this.modal.dismiss();
@@ -57,12 +54,17 @@ export class ChatComponent implements OnInit {
       return;
     }else{
       this.mensaje = "";
-      setTimeout(() => {
-        this.content.scrollToBottom(100);
-      }, 200);
+      this.Scroll();
 
       this.chatService.enviarMensaje(mensajes, this.chat.id);
     }
   }
 
+
+  Scroll(){
+    setTimeout(() => {
+      this.content.scrollToBottom(100);
+    }, 200);  
+
+  }
 }

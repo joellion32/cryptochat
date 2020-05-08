@@ -20,6 +20,10 @@ export class Tab1Page {
   ngOnInit(){
     this.cargarChatRooms();
   }
+  
+  ngDoCheck(): void {
+      
+  }
 
 
   cargarChatRooms(){
