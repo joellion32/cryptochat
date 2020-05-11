@@ -8,7 +8,7 @@ import { AuthServiceService } from 'src/app/services/auth-service.service';
 })
 export class Tab2Page {
 
-  constructor(private authService: AuthServiceService) {}
+  constructor(public authService: AuthServiceService) {}
 
 
   logout(){
