@@ -4,12 +4,25 @@
     <img class="imagen" src="../../../assets/icon/chat-group.png" />
 
   <ion-title class="ion-text-center titulo">ChatGroup App</ion-title>
+<br>
+  <ion-item>
+    <ion-label position="floating">Correo Electronico</ion-label>
+    <ion-input type="email" name="email" [(ngModel)]="usuario.email"></ion-input>
+  </ion-item>
 
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" name="password"  [(ngModel)]="usuario.password"></ion-input>
+  </ion-item>
+  
+  <br>
+  
+  <ion-button color="primary" (click)="Ingresar()" expand="block" shape="round">
+    Entrar
+  </ion-button>
+</div>
 
-  <ion-button  class="margin" expand="block" color="danger" (click)="Ingresar('google')">Ingresa con Gmail</ion-button>
-  <ion-button  class="margin" expand="block" color="primary" (click)="Ingresar('facebook')">Ingresa con Facebook</ion-button>
-  </div>
-
+<p style="font-size: 12px !important; text-align: center;" [routerLink]="['/register']">No estas registrado (registrate)</p>
   
 </ion-content>
 

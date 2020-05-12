@@ -14,7 +14,8 @@ export class Tab1Page {
 
 
 
-  constructor(public mensajesService: MensajeService, public modalController: ModalController, public loadingController: LoadingController) {
+  constructor(public mensajesService: MensajeService, public modalController: ModalController, 
+    public loadingController: LoadingController) {
   }
   
   ngOnInit(){

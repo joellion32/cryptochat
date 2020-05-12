@@ -13,12 +13,11 @@
 </ion-content>
 
 
-
 <ion-content>
   <ion-grid fixed>
     <ion-row>
-      <ion-col class="message" [ngClass]="{'other-message': auth.usuario.uid == id,
-      'my-message': auth.usuario.uid != id}"  *ngFor="let message of room.messages" size="9">
+      <ion-col class="message" *ngFor="let message of room.messages" [ngClass]="{'my-message': message.email == email,
+      'other-message': message.email != email}" size="9">
         <b>{{message.usuario}}</b><br>
         <span>{{message.mensaje}}</span>
         <div class="time ion-text-right">

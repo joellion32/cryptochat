@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ChatComponent } from './chat/chat.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { IonicStorageModule } from '@ionic/storage';
 
 
 
@@ -14,7 +13,6 @@ import { IonicStorageModule } from '@ionic/storage';
     CommonModule,
     IonicModule,
     FormsModule,
-    IonicStorageModule.forRoot()
   ], exports: [
     ChatComponent
   ]

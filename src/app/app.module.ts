@@ -11,7 +11,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { IonicStorageModule } from '@ionic/storage';
 
 
 import { firebaseConfig  } from '../environments/environment';
@@ -27,7 +26,6 @@ import { firebaseConfig  } from '../environments/environment';
   AngularFirestoreModule,
   AngularFireDatabaseModule, // imports firebase/database, only needed for database features
   AngularFireAuthModule,
-  IonicStorageModule.forRoot()
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

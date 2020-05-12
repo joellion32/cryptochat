@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthServiceService } from './auth-service.service';
-import { isNullOrUndefined } from 'util';
 import { NavController } from '@ionic/angular';
 
 @Injectable({

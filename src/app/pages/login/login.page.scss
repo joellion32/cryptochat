@@ -1,6 +1,6 @@
 .container {
-    margin-top: 22vh;
-    margin-bottom: 5vh;;
+    margin-top: 17vh;
+    margin-bottom: 4vh;;
 }
 
 .titulo {
@@ -13,8 +13,8 @@
 
 .imagen {
  margin-bottom: 2rem;
- 
- 
+
+
 @media only screen and (min-width: 320px) {
 
   margin-left: 5rem;
@@ -31,6 +31,10 @@
 
 @media only screen and (min-width: 411px) {
     margin-left: 8rem;
+  }
+
+  @media only screen and (min-width: 640px) {
+    margin-left: 15rem;
   }
 }
 

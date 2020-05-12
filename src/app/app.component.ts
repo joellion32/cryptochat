@@ -19,9 +19,9 @@ export class AppComponent {
     const { SplashScreen, StatusBar } = Plugins;
     try {
       await SplashScreen.hide();
-      await StatusBar.setStyle({ style: StatusBarStyle.Light });
+      await StatusBar.setStyle({ style: StatusBarStyle.Dark });
       if (this.platform.is('android')) {
-        StatusBar.setBackgroundColor({ color: '#CDCDCD' });
+        StatusBar.setBackgroundColor({ color: '#121212' });
       }
     } catch (err) {
       console.log('This is normal in a browser', err);

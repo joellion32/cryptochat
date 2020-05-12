@@ -10,8 +10,9 @@
 <ion-col class="container" size="12">
   <ion-card>
     <ion-card-header>
-        <img class="imagen" src="{{authService.usuario.img}}">
-      
+        <img *ngIf="authService.usuario.genero == 'M'" class="imagen" src="../../../assets/icon/hombre.png">
+        <img *ngIf="authService.usuario.genero == 'F'" class="imagen" src="../../../assets/icon/mujer.png">
+
       <ion-card-title class="ion-text-center">{{authService.usuario.nombre}}</ion-card-title>
     </ion-card-header>
   

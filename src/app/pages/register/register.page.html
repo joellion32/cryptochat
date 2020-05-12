@@ -1,0 +1,53 @@
+<ion-content class="ion-padding container">
+
+  <div class="container">
+    <ion-avatar class="avatar">
+      <img src="../../../assets/icon/chat-group.png" />
+    </ion-avatar>
+  <ion-title class="ion-text-center titulo">Registrate</ion-title>
+<br>
+
+<ion-item>
+  <ion-label position="floating">Nombre y Apellido</ion-label>
+  <ion-input type="text"  name="nombre" [(ngModel)]="usuario.nombre"></ion-input>
+</ion-item>
+
+
+  <ion-item>
+    <ion-label position="floating">Correo Electronico</ion-label>
+    <ion-input type="email"  name="email" [(ngModel)]="usuario.email"></ion-input>
+  </ion-item>
+
+<ion-item>
+  <ion-label>Genero</ion-label>
+  <ion-select name="genero"  [(ngModel)]="usuario.genero" multiple="false" placeholder="Selecionar genero">
+    <ion-select-option value="M">Masculino</ion-select-option>
+    <ion-select-option value="F">Femenino</ion-select-option>
+  </ion-select>
+</ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" name="password"  [(ngModel)]="usuario.password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Repetir Contraseña</ion-label>
+    <ion-input type="password" name="password"  [(ngModel)]="usuario.password2"></ion-input>
+  </ion-item>
+  
+  <br>
+  
+  <ion-button color="primary" (click)="Registrar()" expand="block" shape="round">
+    Registrarse
+  </ion-button>
+</div>
+
+<p style="font-size: 12px !important; text-align: center;" [routerLink]="['/login']">ya estas registrado (inicia sesion)</p>
+  
+</ion-content>
+
+<ion-footer class="footer">
+    <p>Desarrollada por Joel Toribio </p>
+    <p>Todos los derechos son reservados </p>
+</ion-footer>

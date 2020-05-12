@@ -3,7 +3,6 @@ import { NavParams, ModalController, IonContent } from '@ionic/angular';
 import { MensajeService } from 'src/app/services/mensaje.service';
 import { Mensajes } from 'src/app/interfaces/mensajes.interface';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
-import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-chat',
@@ -13,17 +12,17 @@ import { Storage } from '@ionic/storage';
 export class ChatComponent implements OnInit {
   mensaje: any = ""; 
   room: any = [];
-  id: string = "";
+  email: string = "";
 
   @ViewChild(IonContent, null) content: IonContent
 
-  constructor(public nav: NavParams, private modal: ModalController, public chatService: MensajeService, public auth: AuthServiceService, public storage: Storage) { }
+  constructor(public nav: NavParams, private modal: ModalController, public chatService: MensajeService, public auth: AuthServiceService) { 
+    this.email = localStorage.getItem('user');
+  }
  
     // llamar parametros del modal
     chat = this.nav.get('chat');
-    uid = this.storage.get('uid').then((val) => {
-      this.id = val;
-    });
+   
   
 
   ngOnInit() {
@@ -44,6 +43,7 @@ export class ChatComponent implements OnInit {
   enviarMensaje(){
     const mensajes: Mensajes = {
      usuario: this.auth.usuario.nombre,
+     email: this.auth.usuario.email,
      mensaje: this.mensaje,
      fecha: new Date().getTime()
     }
