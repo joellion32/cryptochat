@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { Plugins, StatusBarStyle } from '@capacitor/core';
+import { AuthServiceService } from './services/auth-service.service';
+import { PushService } from './services/push.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +12,13 @@ import { Plugins, StatusBarStyle } from '@capacitor/core';
 })
 export class AppComponent {
   constructor(
-    private platform: Platform
+    private platform: Platform,
+    private auth: AuthServiceService,
+    private push: PushService
   ) {
     this.initializeApp();
+    this.auth.Isautenticated();
+    this.push.LoadPush();
   }
 
   async initializeApp() {

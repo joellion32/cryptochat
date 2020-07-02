@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="ion-no-border">
+    <ion-title>
+      Chat
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-col size="12">
+    <ion-list>
+      <ion-item-sliding *ngFor="let item of chatsRooms" slot="start">
+        <ion-item (click)="MostrarMensajes(item)">
+          <ion-avatar slot="start">
+            <img src="{{item.img}}">
+          </ion-avatar>
+          <ion-label>{{item.name}} 
+            <p>{{item.description}}</p>
+          </ion-label>
+          <ion-badge slot="end" color="primary">{{item.messages.length}}</ion-badge>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="primary" (click)="update(item)"><ion-icon slot="icon-only" name="create-outline"></ion-icon></ion-item-option>
+          <ion-item-option color="danger" (click)="delete(item)"><ion-icon slot="icon-only" name="trash-outline"></ion-icon> </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-col>
+
+  <!-- fab placed to the top end -->
+  <ion-fab *ngIf="user.role == 'admin'" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/create-group/new']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

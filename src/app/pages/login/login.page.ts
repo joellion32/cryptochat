@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { Usuarios } from 'src/app/interfaces/usuario.interface';
 
@@ -16,7 +15,9 @@ export class LoginPage implements OnInit {
   };
 
 
-  constructor(private nav: NavController, public authService: AuthServiceService) { }
+  constructor(public authService: AuthServiceService) { 
+    
+  }
 
   ngOnInit() {
   }

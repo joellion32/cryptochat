@@ -11,9 +11,13 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { OneSignal } from '@ionic-native/onesignal/ngx';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { firebaseConfig  } from '../environments/environment';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,8 +30,13 @@ import { firebaseConfig  } from '../environments/environment';
   AngularFirestoreModule,
   AngularFireDatabaseModule, // imports firebase/database, only needed for database features
   AngularFireAuthModule,
+  HttpClientModule, 
+  ReactiveFormsModule,
+  FormsModule,
+  AngularFireStorageModule
   ],
   providers: [
+    OneSignal,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

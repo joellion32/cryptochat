@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content>
+  <ion-item *ngFor="let user of users">
+    <ion-avatar slot="start">
+      <img *ngIf="user.genero == 'M'" class="imagen" src="../../../assets/icon/hombre.png">
+        <img *ngIf="user.genero == 'F'" class="imagen" src="../../../assets/icon/mujer.png">
+    </ion-avatar>
+    <ion-label>{{user.nombre}}
+      <p>{{user.email}}</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

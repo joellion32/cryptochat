@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './services/auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
-    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -17,11 +16,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: '**',
+    path: 'create-group/:id',
+    loadChildren: () => import('./pages/create-group/create-group.module').then( m => m.CreateGroupPageModule)
+  },
+  {
+    path: '',
     pathMatch: 'full',
     redirectTo: 'login'
   },
-
 ];
 @NgModule({
   imports: [

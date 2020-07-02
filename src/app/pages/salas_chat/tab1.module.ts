@@ -13,7 +13,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
     CommonModule,
     FormsModule,
     Tab1PageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
   ],
   declarations: [Tab1Page]
 })
